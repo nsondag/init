@@ -1,0 +1,1 @@
+ifconfig | grep -v '\t' | cut -f 1 -d ':'
