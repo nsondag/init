@@ -1,1 +1,1 @@
-nslookup slash16.org | grep -A 10 'Non-authoritative answer' | grep Address | cut -f2 -d ' '
+nslookup slash16.org | grep 'Server' | cut -f3

@@ -1,2 +1,2 @@
 ARG=$(ifconfig | grep broadcast | cut -f 6 -d ' ') && echo $ARG
-ping -t 1 $ARG | grep 'bytes from' | cut -f 1 -d ':' | cut -f 4 -d ' ' | sort | uniq
+ping -t 1 $ARG | grep 'bytes from' | cut -f 1 -d ':' | cut -f 4 -d ' '
