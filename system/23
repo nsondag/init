@@ -1,1 +1,1 @@
-dpkg -l
+ssh username@hostname

@@ -1,1 +1,1 @@
-host -t a slash16.org 8.8.8.8 | grep slash16.org | cut -f4 -d ' '
+nslookup slash16.org 8.8.8.8
