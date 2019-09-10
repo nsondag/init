@@ -1,1 +1,31 @@
-tr -dc 'A-Za-z0-9!@#$%^&*()-_=+[]{};:|,<.>/?`' < /dev/urandom | head -c 12; echo;
+while true
+do
+	password=$(tr -dc 'A-Za-z0-9!@#$%^&*()-_=+[]{};:|,<.>/?`' < /dev/urandom | head -c 12)
+
+	test=$(echo "$password" | sed -E 's/[[:lower:]]//g')
+	if [ "$password" = "$test" ]
+	then
+		continue;
+	fi
+
+	test=$(echo "$password" | sed -E 's/[[:upper:]]//g')
+	if [ "$password" = "$test" ]
+	then
+		continue;
+	fi
+
+	test=$(echo "$password" | sed -E 's/[[:digit:]]//g')
+	if [ "$password" = "$test" ]
+	then
+		continue;
+	fi
+
+	test=$(echo "$password" | sed -E 's/[[:punct:]]//g')
+	if [ "$password" = "$test" ]
+	then
+		continue;
+	else
+		break;
+	fi
+done
+echo $password
