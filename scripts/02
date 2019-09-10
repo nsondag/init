@@ -1,1 +1,2 @@
-userdel username
+pkill -u username
+/usr/sbin/userdel -f username
