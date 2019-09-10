@@ -1,1 +1,1 @@
-service ssh restart
+/sbin/service ssh restart
