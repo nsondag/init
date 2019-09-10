@@ -2,25 +2,25 @@ while true
 do
 	password=$(tr -dc 'A-Za-z0-9!@#$%^&*()-_=+[]{};:|,<.>/?`' < /dev/urandom | head -c 12)
 
-	test=$(echo "$password" | sed -E 's/[[:lower:]]//g')
+	test=$(echo "$password" | sed -e 's/[[:lower:]]//g')
 	if [ "$password" = "$test" ]
 	then
 		continue;
 	fi
 
-	test=$(echo "$password" | sed -E 's/[[:upper:]]//g')
+	test=$(echo "$password" | sed -e 's/[[:upper:]]//g')
 	if [ "$password" = "$test" ]
 	then
 		continue;
 	fi
 
-	test=$(echo "$password" | sed -E 's/[[:digit:]]//g')
+	test=$(echo "$password" | sed -e 's/[[:digit:]]//g')
 	if [ "$password" = "$test" ]
 	then
 		continue;
 	fi
 
-	test=$(echo "$password" | sed -E 's/[[:punct:]]//g')
+	test=$(echo "$password" | sed -e 's/[[:punct:]]//g')
 	if [ "$password" = "$test" ]
 	then
 		continue;
